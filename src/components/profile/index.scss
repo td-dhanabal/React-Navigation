@@ -1,0 +1,179 @@
+.menuBody {
+    background: rgb(88, 64, 200);
+    background: linear-gradient(0deg, rgba(88, 64, 200, 1) 0%, rgba(64, 84, 200, 1) 100%);
+    border-radius: 30px;
+
+    ul {
+        padding: 20px;
+
+        li {
+            padding: 14px 10px 14px 0;
+            font-size: 20px;
+            list-style-type: none;
+            border-bottom: 1px solid #fff;
+
+            a {
+                color: #fff !important;
+            }
+        }
+    }
+}
+
+.parent-body {
+    margin: 30px 0px;
+
+    .ml-10 {
+        margin-left: 10px;
+    }
+
+    .pageContent {
+        align-items: center;
+        margin: 0px;
+        padding: 0px 30px 0px 30px;
+
+
+
+        h3 {
+            margin: 0;
+        }
+    }
+
+    .page-body {
+        display: flex;
+
+        p {
+            font-size: 15px;
+            color: #9A9A9A;
+        }
+
+        .left-content {
+            p {
+                text-align: center;
+            }
+
+            .img-body {
+                width: 59%;
+                margin-left: 80px;
+
+                img {
+                    border-radius: 50%;
+                    width: 100%;
+                }
+            }
+
+            h4 {
+                text-align: center;
+                color: #646464;
+            }
+        }
+
+        .right-content {
+            padding: 0 30px 0 60px !important;
+            border-left: 1px solid gainsboro;
+
+            .addrress-body {
+
+
+                .info-body {
+                    label:first-child {
+                        width: 12%;
+                    }
+                }
+            }
+
+            .map-body {
+                margin: 10px 0px;
+
+                .leaflet-container {
+                    border-radius: 10px;
+                }
+            }
+        }
+
+        .info-body {
+            display: flex;
+            align-items: center;
+            line-height: 2;
+
+            label:first-child {
+                width: 33%;
+                text-align: right;
+                color: #9A9A9A;
+                // font-size: 18px;
+            }
+
+            label:last-child {
+                font-weight: 500;
+                margin-left: 5px;
+                color: #545454;
+                // font-size: 18px;
+            }
+        }
+    }
+}
+
+// Popover CSS
+.profile-menu {
+    text-align: center;
+
+    p {
+        margin: 0;
+    }
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.sign-out-btn {
+    border-radius: 15px;
+    background-color: #D55151;
+    color: #fff;
+
+    :hover {
+        border-color: solid #D55151;
+    }
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.ant-popover {
+    width: 270px;
+}
+
+.ant-popover-inner {
+    .user-list-body {
+
+        height: 150px;
+        overflow-x: scroll;
+
+        .users-list {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+
+            :hover {
+                cursor: pointer;
+                color: #652ccb;
+            }
+
+            p {
+                margin: 0 0 0 10px;
+
+                :hover {
+                    color: #652ccb;
+                }
+            }
+        }
+
+        .ant-divider {
+            margin: 5px 0px !important;
+        }
+    }
+}

@@ -1,0 +1,62 @@
+.landingPage {
+    background-image: url('../../assets/BG2.jpg');
+    text-align: center;
+    // margin-top: 10%;
+    height: 100vh;
+
+    .ant-card-head {
+        background-color: #F6F6F6;
+    }
+
+    .ant-card-body {
+        width: 100%;
+        height: 300px;
+        overflow-x: hidden;
+        margin-bottom: 20px;
+    }
+
+    .listItem {
+        display: flex;
+        align-items: center;
+        padding: 5px 0;
+
+        :hover {
+            cursor: pointer;
+            color: #652ccb;
+        }
+
+        p {
+            margin: 0 0 0 10px;
+        }
+    }
+
+    .ant-divider {
+        margin: 10px;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #D8D8D8;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: #D8D8D8;
+}
+.data-loader {
+    display: flex;
+    margin-top: 25%;
+
+    .spin {
+        margin: auto;
+    }
+}
