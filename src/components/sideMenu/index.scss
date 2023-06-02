@@ -1,0 +1,23 @@
+.menuBody {
+    background: rgb(88, 64, 200);
+    background: linear-gradient(0deg, rgba(88, 64, 200, 1) 0%, rgba(64, 84, 200, 1) 100%);
+    border-radius: 30px;
+    // height: 100vh;
+    // margin-left: 5px;
+
+    ul {
+        padding: 60% 20px;
+        // height: 100vh;
+
+        li {
+            padding: 17px 10px 17px 0;
+            font-size: 15px;
+            list-style-type: none;
+            border-bottom: 1px solid #A5A5E4;
+
+            a {
+                color: #A5A5E4 !important;
+            }
+        }
+    }
+}

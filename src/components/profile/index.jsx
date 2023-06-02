@@ -3,14 +3,11 @@ import { getRequest } from '../../api/http';
 import serviceApi from '../../api/serviceApi';
 import { Col, Divider, Row, Avatar, Button, Popover } from 'antd';
 import { BrowserRouter as Router, useParams, Route, Routes, Link, useNavigate, useLocation, Outlet } from 'react-router-dom';
-import { MapContainer, TileLayer, useMap, Popup, Marker } from 'react-leaflet'
-import { useMemo } from "react";
-import Post from '../post';
-import Gallery from '../gallery';
-import Todo from '../todo';
-import Homeprofile from './homeProfile';
+import { MapContainer, TileLayer, useMap, Popup, Marker } from 'react-leaflet';
 import './index.scss';
 import 'leaflet/dist/leaflet.css';
+import SideMenu from '../sideMenu';
+import Chat from '../chat';
 
 const Profile = () => {
     let params = useParams();
@@ -69,17 +66,12 @@ const Profile = () => {
     return (
         <div>
             {console.log('users', users)}
+
             <Row gutter={16} style={{ margin: 0 }}>
-                <Col className="gutter-row menuBody" span={5} >
-                    <ul>
-                        <li> <Link to={`/${params.id}/profile`}>Profile</Link></li>
-                        <li><Link to={`/${params.id}/post`}>Post</Link></li>
-                        <li><Link to={`/${params.id}/gallery`}>Gallery</Link></li>
-                    </ul>
+                <Col className="gutter-row menuBody" span={4} >
+                    <SideMenu />
                 </Col>
-                <Col className="gutter-row parent-body" span={19}>
-                    {console.log('vv', params.id)}
-                    <Outlet />
+                <Col className="gutter-row parent-body" span={20}>
                     {users.map((user, i) => (
                         <>
                             <Row key={i} className='pageContent' gutter={16} style={{ margin: 0 }}>
@@ -161,13 +153,17 @@ const Profile = () => {
                                     </div>
                                     <div className='map-body'>
                                         {console.log('dd', user.address.geo.lat)}
-                                        <MapContainer center={[user.address.geo.lat, user.address.geo.lat]} zoom={13} scrollWheelZoom={false} style={{ height: '400px', width: '100wh' }}>
+                                        <MapContainer center={[user.address.geo.lat, user.address.geo.lng]} zoom={13} scrollWheelZoom={false} style={{ height: '400px', width: '100wh' }}>
                                             <TileLayer
                                                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                                                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                                             />
 
                                         </MapContainer>
+                                        <div className='lat-long'>
+                                            <p>Lat: <span>{user.address.geo.lat}</span></p>
+                                            <p>Long:<span> {user.address.geo.lng}</span></p>
+                                        </div>
                                     </div>
                                 </Col>
 
@@ -175,13 +171,10 @@ const Profile = () => {
 
                         </>
                     ))}
-                    {/* <Routes>
-                        <Route exact path={`/${params.id}/profile`} Component={Homeprofile} />
-                        <Route path={`/${params.id}/post`} Component={Post} />
-                        <Route path={`/${params.id}/gallery`} Component={Gallery} />
-                    </Routes> */}
+
                 </Col>
             </Row>
+            <Chat />
         </div>
     );
 }

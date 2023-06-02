@@ -1,0 +1,42 @@
+.comming-soon-text {
+    h3 {
+        text-align: center;
+        margin-top: 30%;
+        font-size: 40px;
+        color: #EEEEEE;
+    }
+
+}
+
+.chat-container {
+    position: fixed;
+    z-index: 99999;
+    bottom: 0;
+    right: 15px;
+
+    button {
+        background-color: #2C65C8;
+        color: #fff;
+    }
+}
+
+.parent-popup {
+    .popup-card {
+        position: absolute;
+        /* top: 290px; */
+        height: 300px;
+        right: 0;
+        bottom: -124px;
+        z-index: 9999;
+        overflow-x: scroll;
+
+        .listItem {
+            display: flex;
+            align-items: center;
+        }
+
+        .ant-divider {
+            margin: 0;
+        }
+    }
+}
